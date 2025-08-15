@@ -1,5 +1,41 @@
-title: Bayesian PDE Solver
-description: Framework for Bayesian inverse problems in PDEs
+title: "Bayesian PDE Inverse Problems with Certified Uncertainty"
+description: "A comprehensive framework for solving inverse problems in partial differential equations using Bayesian methods with mathematically certified uncertainty quantification."
+baseurl: "/Bayesian_PDE_Inverse_Problems_with_Certified_Uncertainty"
+url: "https://tani843.github.io"
+
+# Academic styling
+markdown: kramdown
+highlighter: rouge
 theme: minima
+
+# Navigation structure
+header_pages:
+  - methodology.md
+  - implementation.md
+  - results.md
+  - documentation.md
+  - about.md
+
+# Academic metadata
+author:
+  name: "Your Name"
+  email: "your.email@university.edu"
+
+# Social and academic links
+social_links:
+  github: tani843
+  
+# SEO and academic features
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Academic styling preferences
+minima:
+  skin: classic
+  
+# Math rendering
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
