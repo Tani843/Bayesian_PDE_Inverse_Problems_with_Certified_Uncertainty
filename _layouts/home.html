@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  <div class="hero-section">
+    <div class="hero-content">
+      <h2>Advanced Bayesian Methods for PDE Inverse Problems</h2>
+      <p class="hero-description">
+        A comprehensive Python framework that combines partial differential equation solvers 
+        with Bayesian inference methods to provide mathematically certified uncertainty quantification 
+        for inverse problems.
+      </p>
+      <div class="hero-buttons">
+        <a href="/quickstart/" class="btn btn-primary">Get Started</a>
+        <a href="/documentation/" class="btn btn-secondary">Documentation</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="features-section">
+    <h2>Key Features</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <h3>🔬 Rigorous Mathematics</h3>
+        <p>Implements concentration inequalities and PAC-Bayes bounds for certified uncertainty quantification.</p>
+      </div>
+      <div class="feature">
+        <h3>⚡ High Performance</h3>
+        <p>Optimized finite difference and finite element PDE solvers with efficient MCMC sampling.</p>
+      </div>
+      <div class="feature">
+        <h3>📊 Comprehensive Analysis</h3>
+        <p>Advanced visualization tools and convergence diagnostics for thorough analysis.</p>
+      </div>
+      <div class="feature">
+        <h3>🎓 Educational</h3>
+        <p>Interactive Jupyter notebooks and extensive documentation for learning and research.</p>
+      </div>
+    </div>
+  </div>
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "Recent Updates" }}</h2>
+    <ul class="post-list">
+      {%- for post in site.posts limit:5 -%}
+      <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+
+</div>

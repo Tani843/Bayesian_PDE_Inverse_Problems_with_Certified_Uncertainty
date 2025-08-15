@@ -1,0 +1,71 @@
+# Jekyll Configuration for Bayesian PDE Inverse Problems Framework
+title: "Bayesian PDE Inverse Problems with Certified Uncertainty"
+description: "A comprehensive Python framework for solving inverse problems in partial differential equations using Bayesian methods with mathematically certified uncertainty quantification."
+author: "Research Team"
+url: "https://bayesian-pde-solver.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Theme settings
+theme: minima
+
+# Academic styling configuration
+google_fonts: "https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap"
+
+# Navigation
+header_pages:
+  - installation.md
+  - quickstart.md
+  - documentation.md
+  - notebooks.md
+  - api.md
+  - examples.md
+  - research.md
+  - contributing.md
+
+# Social links
+github_username: bayesian-pde-solver
+scholar_profile: # Add Google Scholar profile if available
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name/
+  notebooks:
+    output: true
+    permalink: /:collection/:name/
+
+# MathJax configuration for mathematical equations
+mathjax: true
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .pytest_cache/
+  - __pycache__/
+  - "*.pyc"
+  - setup.py
+  - requirements*.txt
+  - .git/
+  - .gitignore
+
+# Academic paper style settings
+academic_style:
+  enable_citations: true
+  bibliography_style: "ieee"
+  show_abstract: true
+  enable_math: true

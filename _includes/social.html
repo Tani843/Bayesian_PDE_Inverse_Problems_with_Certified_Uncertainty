@@ -1,0 +1,25 @@
+{%- assign social = site.minima.social_links -%}
+
+<ul class="social-media-list">
+  {%- if site.github_username -%}
+    <li>
+      <a href="https://github.com/{{ site.github_username }}">
+        <svg class="svg-icon">
+          <use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use>
+        </svg>
+        <span class="username">{{ site.github_username }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  
+  {%- if site.scholar_profile -%}
+    <li>
+      <a href="{{ site.scholar_profile }}">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+          <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
+        </svg>
+        <span class="username">Google Scholar</span>
+      </a>
+    </li>
+  {%- endif -%}
+</ul>
