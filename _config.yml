@@ -8,13 +8,20 @@ markdown: kramdown
 highlighter: rouge
 theme: minima
 
-# Navigation structure
+# Enhanced Navigation structure with Research dropdown
 header_pages:
   - methodology.md
   - implementation.md
   - results.md
   - documentation.md
   - about.md
+
+# Research section pages (for dropdown menu)
+research_pages:
+  - theoretical-results.md
+  - benchmarks.md
+  - applications.md
+  - publications.md
 
 # Academic metadata
 author:
@@ -35,7 +42,44 @@ plugins:
 minima:
   skin: classic
   
-# Math rendering
+# Enhanced math and visualization rendering
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
+
+# MathJax configuration for advanced mathematical notation
+mathjax:
+  source: https://polyfill.io/v3/polyfill.min.js?features=es6
+  config: |
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        packages: {'[+]': ['ams', 'color', 'boldsymbol']}
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      }
+    };
+
+# Plotly.js configuration for interactive visualizations
+plotly:
+  cdn: https://cdn.plot.ly/plotly-latest.min.js
+
+# Include research-specific JavaScript libraries
+include_research_js: true
+
+# Collections for organizing research content
+collections:
+  theoretical_results:
+    output: true
+    permalink: /:collection/:name/
+  benchmarks:
+    output: true  
+    permalink: /:collection/:name/
+  applications:
+    output: true
+    permalink: /:collection/:name/

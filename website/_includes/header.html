@@ -7,9 +7,59 @@
         <a class="page-link" href="{{ "/methodology/" | relative_url }}">Methodology</a>
         <a class="page-link" href="{{ "/implementation/" | relative_url }}">Implementation</a>
         <a class="page-link" href="{{ "/results/" | relative_url }}">Results</a>
+        
+        <!-- Research dropdown menu -->
+        <div class="dropdown">
+          <a class="page-link dropdown-toggle" href="#" onclick="toggleDropdown(event)">Research ▼</a>
+          <div class="dropdown-content">
+            <a href="{{ "/theoretical-results/" | relative_url }}">Theoretical Results</a>
+            <a href="{{ "/benchmarks/" | relative_url }}">Benchmarks</a>
+            <a href="{{ "/applications/" | relative_url }}">Applications</a>
+            <a href="{{ "/publications/" | relative_url }}">Publications</a>
+          </div>
+        </div>
+        
         <a class="page-link" href="{{ "/documentation/" | relative_url }}">Documentation</a>
         <a class="page-link" href="{{ "/about/" | relative_url }}">About</a>
       </div>
     </nav>
   </div>
+  
+  <!-- Include MathJax for mathematical notation -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        packages: {'[+]': ['ams', 'color', 'boldsymbol']}
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      }
+    };
+    
+    // Dropdown menu functionality
+    function toggleDropdown(event) {
+      event.preventDefault();
+      const dropdown = event.target.parentNode;
+      dropdown.classList.toggle('active');
+      
+      // Close other dropdowns
+      document.querySelectorAll('.dropdown').forEach(d => {
+        if (d !== dropdown) d.classList.remove('active');
+      });
+    }
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+      }
+    });
+  </script>
 </header>
